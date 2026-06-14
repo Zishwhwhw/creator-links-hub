@@ -1,52 +1,143 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function App() {
-  const [input, setInput] = useState('')
-  const [active, setActive] = useState(false)
-
-  const handleAction = () => {
-    if (!input) return alert("Please fill out the field.")
-    setActive(true)
-  }
-
   return (
-    <div>
+    <div className="landing-page">
+      {/* Navigation */}
       <nav className="navbar">
-        <div className="logo">Creator Link Hub<span>.</span></div>
+        <div className="logo">
+          <span className="logo-icon">🔗</span>
+          Creator Link Hub<span style={{color: 'var(--primary)'}}>.</span>
+        </div>
         <div className="nav-links">
-          <a href="#">Features</a>
-          <a href="#">Pricing ($15/mo)</a>
-          <a href="#">Login</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it Works</a>
+          <a href="#pricing">Pricing</a>
+          <button className="nav-btn">Login</button>
         </div>
       </nav>
 
-      <div className="container">
-        <h1 className="hero-title">Your Ultimate Link in Bio</h1>
-        <p className="hero-subtitle">A beautiful, lightning-fast micro-landing page for your TikTok or Instagram bio to showcase all your links and products.</p>
-        
-        <div className="action-box">
-          <input 
-            type="text" 
-            placeholder="Enter desired username (e.g., @john_doe)" 
-            value={input} 
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button onClick={handleAction}>Claim Username</button>
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <div className="badge">🚀 Launching 2026</div>
+          <h1 className="hero-title">The Ultimate Platform for <span className="highlight">Creator Link Hub</span></h1>
+          <p className="hero-subtitle">
+            Automate your workflow, scale your business, and save hundreds of hours every month. Trusted by 10,000+ professionals.
+          </p>
+          <div className="hero-cta">
+            <button className="btn-primary">Start Your Free Trial</button>
+            <button className="btn-secondary">View Demo</button>
+          </div>
+          <p className="guarantee">No credit card required. 14-day free trial.</p>
         </div>
-        
-        <div className={`dashboard-mockup ${active ? 'active' : ''}`}>
-          <h3 style={{marginTop: 0, color: 'var(--primary)'}}>✅ Success! Welcome to your Dashboard.</h3>
-          <p style={{color: '#4b5563'}}>
-            Your input: <strong>{input}</strong> has been processed. 
-          </p>
-          <p style={{color: '#4b5563'}}>
-            This is the MVP dashboard. From here, you would normally see analytics, settings, and billing information.
-          </p>
-          <div style={{height: '200px', background: '#f3f4f6', borderRadius: '8px', marginTop: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9ca3af'}}>
-            [ Chart / Data Visualization Placeholder ]
+        <div className="hero-image">
+          <img src={`https://placehold.co/800x500/1e293b/ffffff?text=$Creator Link Hub+Dashboard`} alt="App Dashboard" className="mockup-img" />
+        </div>
+      </section>
+
+      {/* Logos Section */}
+      <section className="trusted-by">
+        <p>TRUSTED BY INNOVATIVE COMPANIES WORLDWIDE</p>
+        <div className="logos">
+          <span>Google</span>
+          <span>Amazon</span>
+          <span>Stripe</span>
+          <span>Netflix</span>
+          <span>Vercel</span>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="features">
+        <h2>Everything you need to succeed</h2>
+        <p className="section-desc">We built Creator Link Hub to be the only tool you will ever need.</p>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="f-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Built on edge infrastructure to deliver sub-millisecond response times globally.</p>
+          </div>
+          <div className="feature-card">
+            <div className="f-icon">🔒</div>
+            <h3>Enterprise Security</h3>
+            <p>SOC2 compliant with end-to-end encryption to keep your data perfectly safe.</p>
+          </div>
+          <div className="feature-card">
+            <div className="f-icon">📊</div>
+            <h3>Deep Analytics</h3>
+            <p>Understand your users with powerful, privacy-friendly analytics and reports.</p>
+          </div>
+          <div className="feature-card">
+            <div className="f-icon">🤖</div>
+            <h3>AI-Powered</h3>
+            <p>Leverage the power of cutting-edge AI to automate your most boring tasks.</p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Interactive App Demo Placeholder */}
+      <section className="app-demo">
+        <div className="demo-container">
+            <h2>Try Creator Link Hub Now</h2>
+            <div className="demo-box">
+                <input type="text" placeholder="Enter your data here..." />
+                <button className="btn-primary">Run Magic</button>
+            </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="pricing">
+        <h2>Simple, transparent pricing</h2>
+        <div className="pricing-cards">
+          <div className="price-card">
+            <h3>Starter</h3>
+            <div className="price">$15<span>/mo</span></div>
+            <ul>
+              <li>✅ Up to 100 uses</li>
+              <li>✅ Basic Support</li>
+              <li>✅ Standard Analytics</li>
+            </ul>
+            <button className="btn-outline">Choose Starter</button>
+          </div>
+          <div className="price-card popular">
+            <div className="popular-badge">Most Popular</div>
+            <h3>Pro</h3>
+            <div className="price">$49<span>/mo</span></div>
+            <ul>
+              <li>✅ Unlimited Uses</li>
+              <li>✅ Priority Support</li>
+              <li>✅ Advanced Analytics</li>
+              <li>✅ Custom Domain</li>
+            </ul>
+            <button className="btn-primary">Choose Pro</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <h3>🔗 Creator Link Hub</h3>
+            <p>Making the web a better place, one app at a time.</p>
+          </div>
+          <div className="footer-links">
+            <div>
+              <h4>Product</h4>
+              <a href="#">Features</a>
+              <a href="#">Pricing</a>
+              <a href="#">Changelog</a>
+            </div>
+            <div>
+              <h4>Legal</h4>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
