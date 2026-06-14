@@ -1,0 +1,17 @@
+
+:root { --primary: #ec4899; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #fafafa; color: #111827; }
+.navbar { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; background: white; }
+.logo { font-size: 24px; font-weight: 800; color: #111827; }
+.logo span { color: var(--primary); }
+.nav-links a { margin-left: 20px; text-decoration: none; color: #4b5563; font-weight: 500; }
+.container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; text-align: center; }
+.hero-title { font-size: 56px; font-weight: 800; margin-bottom: 24px; line-height: 1.1; }
+.hero-subtitle { font-size: 22px; color: #6b7280; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.action-box { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px; display: flex; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+input { flex: 1; border: none; outline: none; padding: 16px; font-size: 16px; background: transparent; }
+button { background: var(--primary); color: white; font-size: 16px; font-weight: 600; padding: 16px 32px; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+button:hover { filter: brightness(0.9); }
+.dashboard-mockup { margin-top: 80px; padding: 40px; background: white; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); text-align: left; display: none; }
+.dashboard-mockup.active { display: block; animation: slideUp 0.5s ease; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
